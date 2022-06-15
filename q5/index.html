@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color tiles</title>
+</head>
+
+<style>
+    .main {
+        display: flex;
+        justify-content: center;
+    }
+
+    .tiles {
+        border: 1px solid black;
+        height: 80px;
+        width: 100px;
+        margin: 10px;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+
+
+<body>
+    <div class="main">
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+
+    </div>
+    <button onclick="doMagic()">GENERATE RANDOM COLOUR</button>
+</body>
+
+<script>
+    function doMagic() {
+        var tiles = document.querySelectorAll('.tiles');
+
+        for (let index = 0; index < tiles.length; index++) {
+            const element = tiles[index];
+            var color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            element.innerHTML = color;
+            element.style.backgroundColor = color;
+        }
+    }
+
+    doMagic();
+
+
+    // var color1 = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    // var color2 = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    // var color3 = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    // var color4 = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    // var color5 = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    // tiles[0].style.backgroundColor = color1;
+    // tiles[2].style.backgroundColor = color2;
+    // tiles[2].style.backgroundColor = color3;
+    // tiles[3].style.backgroundColor = color4;
+    // tiles[4].style.backgroundColor = color5;
+
+</script>
+
+</html>

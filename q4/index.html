@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack Example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="heading">
+            <h1> Queue implementation</h1>
+        </div>
+        <div class="content">
+            <div><Label>The number you want to add in queue</Label></div>
+            <div><input type="number" name="num" id="num"></div>
+            <div>
+                <button id="add">ADD</button>
+                <button id="remove">REMOVE</button>
+            </div>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+</body>
+
+<script>
+
+var queue = [];
+
+const addBtn = document.getElementById('add');
+const removeBtn = document.getElementById('remove');
+
+
+addBtn.addEventListener('click', addHandler);
+removeBtn.addEventListener('click', removeHandler);
+
+function addHandler() {
+    const num = document.getElementById('num').value;
+    queue.push(num);
+    console.log(queue);
+    displayQueue();
+}
+
+function removeHandler() {
+    if (queue.length > 0) {
+        const num = queue.shift();
+        displayQueue();
+    } else {
+        alert('Queue is empty');
+    }
+
+}
+
+function displayQueue() {
+    const result = document.getElementById('result');
+    result.innerHTML = '';
+    console.log("before", result.innerHTML);
+    var flagFirstElement = true;
+
+
+    // result.innerHTML = queue.join(', ');
+
+    for (let index = 0; index < queue.length; index++) {
+        const element = queue[index];
+
+        if(index === 0) {
+            result.innerHTML +=  element
+        } else {
+            result.innerHTML += ', ' + element
+        }
+        
+    }
+
+    console.log("after ", result.innerHTML);
+}
+
+
+
+</script>
+
+
+
+</html>

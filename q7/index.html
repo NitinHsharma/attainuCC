@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan calculator</title>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Load calculator</h1>
+        <label for="Principal">Principal</label>
+        <input type="number" name="p" id="p">
+        <label for="interset">interset</label>
+        <input type="text" name="i" id="i">
+        <label for="months">Month to pay</label>
+        <input type="number" name="m" id="m">
+
+        <button id="cal">calculate</button>
+    </div>
+</body>
+
+
+<script>
+
+    var calBtn = document.getElementById('cal');
+
+    calBtn.addEventListener('click', function () {
+        var p = document.getElementById('p').value;
+        var i = document.getElementById('i').value;
+        var m = document.getElementById('m').value;
+
+        console.log(p);
+        console.log(i);
+        console.log(m);
+
+        var total = parseInt(p) + parseInt((p * i) /100);
+        console.log(total);
+        var perMonth = total / m;
+        
+
+        console.log(perMonth);
+    })
+
+
+</script>
+
+</html>

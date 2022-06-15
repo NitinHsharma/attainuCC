@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parser</title>
+</head>
+
+<body>
+    <h1>Custom Parser</h1>
+    <label for="parser">input sample: </label>
+    <input type="text" name="str" id="str">
+    <button id="process">Parse</button>
+</body>
+
+
+<script>
+    var processBtn = document.getElementById('process');
+
+    processBtn.addEventListener('click', function () {
+
+        var strInput = document.getElementById('str').value;
+        var stack = [];
+        var removedValues = [];
+        for (let index = 0; index < strInput.length; index++) {
+            var currentElement = strInput[index];
+            if (currentElement != '#') {
+                stack.push(currentElement);
+            } else {
+                var removedElement = stack.pop();
+                removedValues.push(removedElement);
+            }
+        }
+
+        console.log(stack.join(""));
+        console.log(removedValues.join(""));
+
+    });
+
+</script>
+
+
+</html>

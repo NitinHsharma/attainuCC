@@ -1,0 +1,17 @@
+.main {
+    margin: auto;
+    width: 250px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: stretch;
+}
+
+#add {
+    background-color: red;
+    margin: 10px;
+    border-radius: 8px;
+}
