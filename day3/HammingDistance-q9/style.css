@@ -1,0 +1,14 @@
+.main {
+    display: flex;
+    margin: auto;
+    width: 350px;
+    padding: 10px;
+    flex-direction: column;
+}
+
+.form {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

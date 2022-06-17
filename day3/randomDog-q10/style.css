@@ -1,0 +1,17 @@
+.main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgDOG {
+    width: 30%;
+    height: 25%;
+}
+
+#dogClick {
+    background-color: blueviolet;
+    border-radius: 10px;
+    height: 25px;
+}
