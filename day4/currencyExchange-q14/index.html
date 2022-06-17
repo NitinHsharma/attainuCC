@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency exachange</title>
+</head>
+
+<body>
+    <div class="main">
+
+        <div class="first">
+            <select name="from" id="from">
+                <option value="INR">INR</option>
+                <option value="USD">USD</option>
+            </select>
+
+            <input type="number" name="amount" id="amount">
+        </div>
+
+
+        <div class="second">
+            <select name="from" id="to">
+                <option value="INR">INR</option>
+                <option value="USD">USD</option>
+            </select>
+
+            <div id="result"></div>
+
+        </div>
+
+    </div>
+</body>
+
+<script>
+
+    var amountTxt = document.getElementById('amount');
+
+    amountTxt.addEventListener('keyup', function () {
+
+        var from = document.getElementById('from').value;
+        var to = document.getElementById('to').value;
+        var amount = amountTxt.value;
+
+        if (amount == "") {
+            return;
+        }
+
+
+        const headers = {
+            'apikey': '6q8QhGAw0861RGOQYWofJ7ZOd40P7KiT'
+        }
+        const url = `https://api.apilayer.com/exchangerates_data/convert?to=${to}&from=${from}&amount=${amount}`;
+
+        fetch(url, {
+            method: 'GET',
+            headers: headers
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                var result = document.getElementById('result');
+                result.innerText = data.result;
+            })
+            .catch(err => console.log(err))
+    })
+
+</script>
+
+
+</html>
