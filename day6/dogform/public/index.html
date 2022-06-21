@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog form</title>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Dog form</h1>
+        <form action="/dogData" method="post">
+        <!-- Name, Age, Breed, Height, Weight, OwnerName -->
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age">
+        <br>
+        <label for="breed">Breed:</label>
+        <input type="text" name="breed" id="breed">
+        <br>
+        <label for="height">Height:</label>
+        <input type="number" name="height" id="height">
+        <br>
+        <label for="weight">Weight:</label>
+        <input type="number" name="weight" id="weight">
+        <br>
+
+        <label for="owner">Owner:</label>
+        <input type="text" name="owner" id="owner">
+        <br>
+        <input id="submit" type="submit" value="Submit">
+
+    </form>
+    </div>
+</body>
+
+</html>

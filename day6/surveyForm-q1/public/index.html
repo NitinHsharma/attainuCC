@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <form action="">
+
+            <h1>Survey Form</h1>
+            <div class="question">
+                <p>What is your name?</p>
+                <input type="text" name="name" id="name">
+            </div>
+
+            <div class="question">
+                <p>What is your favorite color?</p>
+                <input type="text" name="color" id="color">
+            </div>
+
+            <div class="question">
+                <p>What is your favorite food?</p>
+                <input type="text" name="food" id="food">
+            </div>
+            <br>
+            <button id="submit" type="submit">SUBMIT</button>
+        </form>
+        <div id="result">
+
+        </div>
+
+    </div>
+</body>
+
+<script>
+
+    window.onload = function () {
+
+        const submitBtn = document.getElementById('submit');
+        submitBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const color = document.getElementById('color').value;
+            const food = document.getElementById('food').value;
+
+            const data = {
+                name,
+                color,
+                food
+            };
+
+            fetch("/survey", {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').innerText = data.message;
+                })
+                .catch(err => console.log(err));
+            
+            return false;
+        });
+    }
+
+
+</script>
+
+
+
+</html>
