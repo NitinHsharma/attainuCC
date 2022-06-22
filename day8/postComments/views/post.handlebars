@@ -1,0 +1,15 @@
+<p>POST TITLE</p>
+<h1>{{title}}</h1>
+<p>POST BODY</p>
+<h3>{{body}}</h3>
+<hr>
+<div class="comments">
+    <ul>
+        {{#each comments}}
+            <li>
+                <h3>{{author}}</h3>
+                <p>{{body}}</p>
+            </li>
+        {{/each}}
+    </ul>
+</div>
