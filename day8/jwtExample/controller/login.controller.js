@@ -11,7 +11,7 @@ function login(req, res) {
 
         const payload = {
             username: req.body.username,
-            type: 'admin'
+            type: 'admin',
         };
         
         const secret = "mytopsecret";
